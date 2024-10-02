@@ -1,2 +1,6 @@
 @import url(tailwind.css);
 @import url(font.css);
+
+body {
+  @apply dark:text-white dark:bg-black;
+}
