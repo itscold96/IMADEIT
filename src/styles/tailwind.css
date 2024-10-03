@@ -10,6 +10,6 @@
     @apply flex justify-center items-center h-16 min-w-16  rounded-md;
   }
   .item-text-wrapper {
-    @apply flex items-center text-lg border-b-[0.1px] h-16 w-full border-zinc-600;
+    @apply flex items-center text-lg border-b-[0.1px] h-16 w-full border-zinc-600 truncate;
   }
 }

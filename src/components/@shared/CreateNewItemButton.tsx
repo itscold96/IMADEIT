@@ -11,7 +11,7 @@ export default function CreateNewItemButton({ text, onCreateClick }: CreateNewIt
       <div className={'emoji-wrapper'}>
         <Plus className={'text-red-500'} size={36} strokeWidth={1.8} />
       </div>
-      <div className={'item-text-wrapper text-red-500 '}>{text}</div>
+      <div className={'item-text-wrapper text-red-500'}>{text}</div>
     </button>
   );
 }
