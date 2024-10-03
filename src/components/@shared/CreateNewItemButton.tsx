@@ -8,7 +8,7 @@ interface CreateNewItemButtonProps {
 export default function CreateNewItemButton({ text, onCreateClick }: CreateNewItemButtonProps) {
   return (
     <button onClick={onCreateClick} className={'item-container'}>
-      <div className={'emoji-wrapper bg-zinc-800'}>
+      <div className={'emoji-wrapper'}>
         <Plus className={'text-red-500'} size={36} strokeWidth={1.8} />
       </div>
       <div className={'item-text-wrapper text-red-500 '}>{text}</div>
