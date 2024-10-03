@@ -1,6 +1,8 @@
 import RootLayout from 'components/@shared/RootLayout';
 import CreateNewRoutine from 'components/RoutineBoard.tsx/CreateNewRoutine';
+import RoutineList from 'components/RoutineBoard.tsx/RoutineList';
 import { Search } from 'lucide-react';
+import { Suspense } from 'react';
 
 export default function RoutineBoard() {
   return (
@@ -12,6 +14,10 @@ export default function RoutineBoard() {
         <input className={'bg-zinc-800  rounded-md h-9 w-full pl-10 outline-none active:bg-zinc-900'} />
       </section>
       <CreateNewRoutine />
+
+      <Suspense fallback={'loading...'}>
+        <RoutineList />
+      </Suspense>
     </RootLayout>
   );
 }
