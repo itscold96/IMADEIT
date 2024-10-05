@@ -1,6 +1,6 @@
 import RootLayout from 'components/@shared/RootLayout';
-import CreateNewRoutine from 'components/RoutineBoard.tsx/CreateNewRoutine';
-import RoutineList from 'components/RoutineBoard.tsx/RoutineList';
+import CreateNewRoutine from 'components/routineBoard/CreateNewRoutine';
+import RoutineList from 'components/routineBoard/RoutineList';
 import { Search } from 'lucide-react';
 import { Suspense } from 'react';
 
