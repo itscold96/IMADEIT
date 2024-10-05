@@ -1,11 +1,11 @@
 import { useRoutineList } from 'queries/useRoutineList';
-import RoutineItem from './RoutineItem';
+import Routine from './Routine';
 
 export default function RoutineList() {
   const { data: RoutineList } = useRoutineList();
   return (
     <div className={'flex flex-col gap-3 py-3'}>
-      {RoutineList?.map((routine) => <RoutineItem key={routine.id} routineId={routine.id} text={routine.name} />)}
+      {RoutineList?.map((routine) => <Routine key={routine.id} routineId={routine.id} text={routine.name} />)}
     </div>
   );
 }
