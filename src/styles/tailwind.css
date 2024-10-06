@@ -15,4 +15,7 @@
   .paly-edit-button {
     @apply flex justify-center items-center gap-3 h-full w-full bg-zinc-800 rounded-lg;
   }
+  .text-title {
+    @apply text-4xl font-bold;
+  }
 }

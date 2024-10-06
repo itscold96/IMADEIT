@@ -7,7 +7,7 @@ import { Suspense } from 'react';
 export default function RoutineBoard() {
   return (
     <RootLayout>
-      <h1 className={'text-4xl font-bold'}>루틴 리스트</h1>
+      <h1 className={'text-title'}>루틴 리스트</h1>
 
       <section className={'relative my-5'}>
         <Search className={'absolute top-1.5 left-2 text-zinc-600'} />
