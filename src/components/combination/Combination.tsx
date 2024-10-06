@@ -24,15 +24,15 @@ export default function Combination({ combination }: CombinationProps) {
 // 재사용될 컴포넌트는 아니지만
 // Combination 컴포넌트 내부에서 섞여있을 경우, 가독성이 떨어진다고 판단하여
 // 동일 파일 내부에서 컴포넌트로 분리
-const Icon = ({ type }: { type: string }) => {
+function Icon({ type }: { type: string }) {
   return type === 'exercise' ? (
     <Dumbbell className="text-red-500" size={28} strokeWidth={1.8} />
   ) : (
     <TimerReset className="text-red-500" size={28} strokeWidth={1.8} />
   );
-};
+}
 
-const Details = ({ combination }: { combination: CombinationType }) => {
+function Details({ combination }: { combination: CombinationType }) {
   return (
     <section className={'flex text-sm text-red-500 gap-2'}>
       <p>sets: {combination.sets}</p>
@@ -46,4 +46,4 @@ const Details = ({ combination }: { combination: CombinationType }) => {
       )}
     </section>
   );
-};
+}
