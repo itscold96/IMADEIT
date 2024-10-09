@@ -1,8 +1,12 @@
 import CreateNewItemButton from 'components/@shared/CreateNewItemButton';
+import { useToggle } from 'hooks/useToggle';
 
 export default function CreateNewWorkout() {
-  const handleCreateClick = () => {
-    console.log('새로운 루틴 생성 버튼 클릭');
-  };
-  return <CreateNewItemButton text={'새로운 운동 추가하기..'} onCreateClick={handleCreateClick} />;
+  const { toggleValue, toggleDispatch } = useToggle();
+
+  return (
+    <>
+      <CreateNewItemButton text={'새로운 운동 추가하기..'} onCreateClick={() => toggleDispatch({ type: 'switch' })} />
+    </>
+  );
 }
