@@ -17,3 +17,5 @@ export interface Exercise extends Workout {
 }
 
 export type CombinationType = Exercise | Tabata;
+
+export type WorkoutFormStateType = Omit<Exercise, 'type'> | Omit<Tabata, 'type'>;

@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
 @layer utilities {
   .item-container {
     @apply flex gap-3 items-center w-full;
@@ -17,5 +25,11 @@
   }
   .text-title {
     @apply text-4xl font-bold;
+  }
+  .modal-title {
+    @apply text-2xl font-bold;
+  }
+  .input {
+    @apply bg-black border border-zinc-600 rounded-md h-12 px-3 text-xl font-light outline-none;
   }
 }
