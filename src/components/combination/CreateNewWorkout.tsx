@@ -10,8 +10,9 @@ const customModalFrameStyles: Modal.Styles = {
   content: {
     backgroundColor: 'black',
     border: '1px solid #52525b',
+    height: 'fit-content',
     maxWidth: '768px',
-    minWidth: '320px',
+    width: '90%',
     padding: '30px',
     top: '50%',
     left: '50%',

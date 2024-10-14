@@ -12,7 +12,6 @@ export interface Tabata extends Workout {
 
 export interface Exercise extends Workout {
   type: 'exercise';
-  sets: number;
   reps: number;
 }
 

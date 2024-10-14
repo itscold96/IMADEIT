@@ -18,12 +18,12 @@ export default function RoutineCombination() {
         <div className={'text-title truncate'}>{name}</div>
       </div>
 
-      <div className={'flex gap-3 text-red-500 text-lg h-14'}>
-        <button className={'paly-edit-button'}>
+      <div className={'flex gap-3'}>
+        <button className={'button-primary'}>
           <Play size={25} strokeWidth={2.2} />
           시작
         </button>
-        <button className={'paly-edit-button'}>
+        <button className={'button-primary'}>
           <Cog size={25} strokeWidth={2.2} />
           편집
         </button>
