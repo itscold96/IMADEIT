@@ -1,24 +1,32 @@
 import Input from 'components/@shared/Input';
+import { VALID_OPTIONS } from 'constants/validOption';
 import { useValidForm, ValidationConfig } from 'hooks/useValidForm';
 import { FieldValues } from 'react-hook-form';
 
-const exerciseFormConfig: ValidationConfig = {
+const tabataFormConfig: ValidationConfig = {
   name: {
-    required: '필수 입력값입니다.',
+    required: VALID_OPTIONS.required,
+    maxLength: VALID_OPTIONS.maxLength16,
   },
   sets: {
-    required: '필수 입력값입니다.',
-  },
-  rest_sec: {
-    required: '필수 입력값입니다.',
+    required: VALID_OPTIONS.required,
+    min: VALID_OPTIONS.min1,
+    max: VALID_OPTIONS.max99,
   },
   workout_sec: {
-    required: '필수 입력값입니다.',
+    required: VALID_OPTIONS.required,
+    min: VALID_OPTIONS.min1Sec,
+    max: VALID_OPTIONS.max3600Sec,
+  },
+  rest_sec: {
+    required: VALID_OPTIONS.required,
+    min: VALID_OPTIONS.min1Sec,
+    max: VALID_OPTIONS.max3600Sec,
   },
 };
 
 export default function TabataForm() {
-  const { register, errors, handleSubmit } = useValidForm({ validationConfig: exerciseFormConfig });
+  const { register, errors, handleSubmit } = useValidForm({ validationConfig: tabataFormConfig });
 
   const handleFormSubmit = (formData: FieldValues) => {
     console.log('formData:', formData);
@@ -45,7 +53,7 @@ export default function TabataForm() {
       />
       <Input
         htmlFor={'workout_sec'}
-        label={'운동 시간'}
+        label={'운동 시간( 초 )'}
         error={errors.workout_sec}
         message={errors.workout_sec?.message}
         placeholder={'운동 시간를 입력해주세요'}
@@ -54,7 +62,7 @@ export default function TabataForm() {
       />
       <Input
         htmlFor={'rest_sec'}
-        label={'휴식 시간'}
+        label={'휴식 시간( 초 )'}
         error={errors.rest_sec}
         message={errors.rest_sec?.message}
         placeholder={'휴식 시간을 입력해주세요'}

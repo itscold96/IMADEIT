@@ -1,4 +1,4 @@
-//TODO: linked routine id를 props로 받아서 supabase에 추가 해야함
+//TODO: linked routine id를 props로 받아서 supabase에 추가 해야함, 모달 높이가 모바일에서 너무 큼
 
 import { useToggle } from 'hooks/useToggle';
 import ExerciseForm from './ExerciseForms';

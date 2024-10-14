@@ -1,16 +1,22 @@
 import Input from 'components/@shared/Input';
+import { VALID_OPTIONS } from 'constants/validOption';
 import { useValidForm, ValidationConfig } from 'hooks/useValidForm';
 import { FieldValues } from 'react-hook-form';
 
 const exerciseFormConfig: ValidationConfig = {
   name: {
-    required: '필수 입력값입니다.',
+    required: VALID_OPTIONS.required,
+    maxLength: VALID_OPTIONS.maxLength16,
   },
   sets: {
-    required: '필수 입력값입니다.',
+    required: VALID_OPTIONS.required,
+    min: VALID_OPTIONS.min1,
+    max: VALID_OPTIONS.max99,
   },
   reps: {
-    required: '필수 입력값입니다.',
+    required: VALID_OPTIONS.required,
+    min: VALID_OPTIONS.min1,
+    max: VALID_OPTIONS.max999,
   },
 };
 
