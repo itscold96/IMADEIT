@@ -21,7 +21,7 @@ const exerciseFormConfig: ValidationConfig = {
 };
 
 export default function ExerciseForm() {
-  const { register, errors, handleSubmit } = useValidForm({ validationConfig: exerciseFormConfig });
+  const { register, errors, handleSubmit } = useValidForm({ validationConfig: exerciseFormConfig, mode: 'onSubmit' });
 
   const handleFormSubmit = (formData: FieldValues) => {
     console.log('formData:', formData);

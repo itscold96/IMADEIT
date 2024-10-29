@@ -26,7 +26,7 @@ const tabataFormConfig: ValidationConfig = {
 };
 
 export default function TabataForm() {
-  const { register, errors, handleSubmit } = useValidForm({ validationConfig: tabataFormConfig });
+  const { register, errors, handleSubmit } = useValidForm({ validationConfig: tabataFormConfig, mode: 'onSubmit' });
 
   const handleFormSubmit = (formData: FieldValues) => {
     console.log('formData:', formData);

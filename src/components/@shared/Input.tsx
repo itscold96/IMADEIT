@@ -1,28 +1,17 @@
 import classNames from 'classnames';
+import { InputHTMLAttributes } from 'react';
 import { FieldError, FieldErrorsImpl, Merge, UseFormRegisterReturn } from 'react-hook-form';
-import { HTMLInputTypeAttribute } from 'react';
 
-interface ValidInputProps {
-  label?: string;
+interface ValidInputProps extends InputHTMLAttributes<HTMLInputElement> {
   htmlFor?: string;
+  label?: string;
   error?: FieldError | Merge<FieldError, FieldErrorsImpl>;
   message?: string | FieldError | Merge<FieldError, FieldErrorsImpl>;
   register?: UseFormRegisterReturn;
-  type?: HTMLInputTypeAttribute;
-  placeholder?: string;
   className?: string;
 }
 
-export default function Input({
-  label,
-  htmlFor,
-  error,
-  message,
-  register,
-  type = 'text',
-  placeholder = '',
-  className,
-}: ValidInputProps) {
+export default function Input({ htmlFor, label, error, message, register, className, ...inputProps }: ValidInputProps) {
   return (
     <div className={classNames('flex flex-col gap-2', className)}>
       {label && (
@@ -30,13 +19,7 @@ export default function Input({
           {label}
         </label>
       )}
-      <input
-        id={htmlFor}
-        type={type}
-        className={classNames('input', error && 'border-red-500')}
-        placeholder={placeholder}
-        {...register}
-      />
+      <input id={htmlFor} className={classNames('input', error && 'border-red-500')} {...register} {...inputProps} />
       {message && <p className={'text-red-500 pl-3'}>{message.toString()}</p>}
     </div>
   );
